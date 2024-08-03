@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Aniversário!</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      background: #ffecd2;
+      background: -webkit-linear-gradient(to right, #fcb69f, #ffecd2);
+      background: linear-gradient(to right, #fcb69f, #ffecd2);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .background {
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px 50px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      border: 3px solid #ff6f61;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #ff6f61;
+      margin: 0;
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin: 10px 0;
+      color: #333;
+      font-size: 1.2em;
+    }
+
+    #message {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.4em;
+      animation: fadeIn 2s;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    #message p {
+      margin: 10px 0;
+    }
+
+    #message p:first-of-type {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+    }
+
+    #message p:nth-of-type(2) {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: #ff6f61;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1.2em;
+      margin-top: 20px;
+      transition: background-color 0.3s, transform 0.3s;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    button:hover {
+      background-color: #ff4f41;
+      transform: scale(1.05);
+    }
+
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background-color: #ff6f61;
+      transform: rotate(45deg);
+      animation: float 10s infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff6f61;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(45deg);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.7;
+      }
+    }
+
+    .heart:nth-child(1) {
+      top: 10%;
+      left: 20%;
+      animation-duration: 7s;
+    }
+
+    .heart:nth-child(2) {
+      top: 20%;
+      left: 70%;
+      animation-duration: 9s;
+    }
+
+    .heart:nth-child(3) {
+      top: 30%;
+      left: 50%;
+      animation-duration: 8s;
+    }
+
+    .heart:nth-child(4) {
+      top: 40%;
+      left: 80%;
+      animation-duration: 6s;
+    }
+
+    .heart:nth-child(5) {
+      top: 50%;
+      left: 30%;
+      animation-duration: 10s;
+    }
+
+    .heart:nth-child(6) {
+      top: 60%;
+      left: 10%;
+      animation-duration: 11s;
+    }
+
+    .heart:nth-child(7) {
+      top: 70%;
+      left: 40%;
+      animation-duration: 9s;
+    }
+
+    .heart:nth-child(8) {
+      top: 80%;
+      left: 60%;
+      animation-duration: 8s;
+    }
+
+    .heart:nth-child(9) {
+      top: 90%;
+      left: 20%;
+      animation-duration: 7s;
+    }
+
+    .heart:nth-child(10) {
+      top: 20%;
+      left: 80%;
+      animation-duration: 6s;
+    }
+
+    #more-info {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+      overflow: auto;
+      max-height: 300px;
+      padding-right: 15px;
+      border-top: 2px solid #ff6f61;
+      padding-top: 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: max-height 0.5s ease-in-out;
+    }
+
+    #more-info p {
+      font-size: 1.2em;
+      color: #ff6f61;
+      margin: 5px 0;
+      animation: fadeIn 2s;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      button {
+        font-size: 1em;
+        padding: 10px 20px;
+      }
+
+      #message {
+        font-size: 1.2em;
+      }
+
+      .container {
+        padding: 20px;
+        max-width: calc(100% - 40px);
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="container">
+    <h1>Feliz Aniversário!</h1>
+    <p>Clique no botão abaixo para uma surpresa especial!</p>
+    <button onclick="showMessage()">Clique aqui</button>
+    <div id="message">
+      <p>Feliz Aniversário, meu amor 🎉</p>
+      <p>Espero que seu dia seja tão incrível quanto você!</p>
+      <button onclick="toggleMoreInfo()">Saiba Mais!</button>
+      <div id="more-info">
+        <p>እኔ እወድሃለሁ</p>
+        <p>أحبك</p>
+        <p>我爱你</p>
+        <p>Jeg elsker dig</p>
+        <p>Ik hou van jou</p>
+        <p>I love you</p>
+        <p>Je t'aime</p>
+        <p>Ich liebe dich</p>
+        <p>Σ'αγαπώ</p>
+        <p>אני אוהב אותך</p>
+        <p>मैं तुमसे प्यार करता हूँ</p>
+        <p>Ti amo</p>
+        <p>愛してる</p>
+        <p>사랑해</p>
+        <p>Eu te amo</p>
+        <p>Я тебя люблю</p>
+        <p>Te amo</p>
+        <p>Jag älskar dig</p>
+        <p>Seni seviyorum</p>
+        <p>Anh yêu em</p>
+        <p>Rakastan sinua</p>
+        <p>Jeg elsker deg</p>
+        <p>Kocham cię</p>
+        <p>Te iubesc</p>
+        <p>ฉันรักคุณ</p>
+        <p>Aku cinta kamu</p>
+        <p>Saya cintakan awak</p>
+        <p>Szeretlek</p>
+        <p>Miluji tě</p>
+        <p>Ľúbim ťa</p>
+        <p>Volim te</p>
+        <p>Волим те</p>
+        <p>Обичам те</p>
+        <p>Es tevi mīlu</p>
+        <p>Aš tave myliu</p>
+        <p>Ma armastan sind</p>
+        <p>Я тебе кохаю</p>
+        <p>Я цябе кахаю</p>
+        <p>მიყვარხარ</p>
+        <p>Ես սիրում եմ քեզ</p>
+        <p>Мен сені жақсы көремін</p>
+        <p>Men seni sevaman</p>
+        <p>Mən səni sevirəm</p>
+        <p>Би чамд хайртай</p>
+        <p>ខ្ញុំស្រលាញ់អ្នក</p>
+        <p>ຂ້ອຍ​ຮັກ​ເຈົ້າ</p>
+        <p>ငါနင့်ကိုချစ်တယ်</p>
+        <p>Mahal kita</p>
+        <p>Ouh je t'aime</p>
+        <p>Eu te amo</p>
+        <p>Amo-te</p>
+        <p>Je t’aime</p>
+        <p>Mi amas vin</p>
+        <p>Ich liab Di</p>
+        <p>Εγώ σ’ αγαπώ</p>
+        <p>Jeg elsker dig</p>
+        <p>Ti amo</p>
+        <p>Ich liebe dich</p>
+        <p>Ti amo</p>
+        <p>我爱你</p>
+        <p>Ik hou van jou</p>
+        <p>Je t’aime</p>
+        <p>Eu te amo</p>
+        <p>ฉันรักคุณ</p>
+        <p>사랑해</p>
+        <p>Μα σε αγαπώ</p>
+        <p>ຂໍໂທດ</p>
+        <p>Saang khon chao</p>
+        <p>Ne te je t’aime</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
