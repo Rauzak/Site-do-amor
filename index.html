@@ -53,15 +53,16 @@
       position: relative;
       z-index: 1;
       background: rgba(255, 255, 255, 0.9);
-      padding: 30px 50px;
+      padding: 20px 30px;
       border-radius: 15px;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
       border: 3px solid #ff6f61;
-      max-width: 500px;
+      max-width: 90%;
       width: 100%;
       text-align: center;
       overflow: hidden;
       transition: all 0.3s;
+      margin: 10px;
     }
 
     .container:hover {
@@ -73,20 +74,21 @@
       font-family: 'Pacifico', cursive;
       color: #ff6f61;
       margin: 0;
-      font-size: 3em;
+      font-size: 2.5em;
       margin-bottom: 20px;
     }
 
     p {
       margin: 10px 0;
       color: #333;
-      font-size: 1.2em;
+      font-size: 1em;
+      line-height: 1.4;
     }
 
     #message {
       display: none;
       margin-top: 20px;
-      font-size: 1.4em;
+      font-size: 1.2em;
       animation: fadeIn 2s;
     }
 
@@ -112,17 +114,17 @@
     #message p:nth-of-type(2) {
       font-family: 'Roboto', sans-serif;
       font-weight: 300;
-      font-size: 1em;
+      font-size: 0.9em;
     }
 
     button {
       background-color: #ff6f61;
       color: #fff;
       border: none;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 25px;
       cursor: pointer;
-      font-size: 1.2em;
+      font-size: 1em;
       margin-top: 20px;
       transition: background-color 0.3s, transform 0.3s;
       font-family: 'Roboto', sans-serif;
@@ -256,34 +258,34 @@
     }
 
     #more-info p {
-      font-size: 1.2em;
+      font-size: 1em;
       color: #ff6f61;
       margin: 5px 0;
-      animation: fadeIn 2s;
       line-height: 1.5;
+      animation: fadeIn 2s;
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 2.5em;
+        font-size: 2em;
       }
 
       p {
-        font-size: 1em;
+        font-size: 0.9em;
       }
 
       button {
-        font-size: 1em;
-        padding: 10px 20px;
+        font-size: 0.9em;
+        padding: 8px 16px;
       }
 
       #message {
-        font-size: 1.2em;
+        font-size: 1em;
       }
 
       .container {
-        padding: 20px;
-        max-width: calc(100% - 40px);
+        padding: 15px;
+        max-width: calc(100% - 30px);
         box-sizing: border-box;
       }
     }
@@ -307,7 +309,7 @@
     <p>Clique no botão abaixo para uma surpresa especial!</p>
     <button onclick="showMessage()">Clique aqui</button>
     <div id="message">
-      <p>Feliz Aniversário, meu amor 🎉</p>
+      <p>Feliz Aniversário, [Nome da sua namorada]! 🎉</p>
       <p>Espero que seu dia seja tão incrível quanto você!</p>
       <button onclick="toggleMoreInfo()">Saiba Mais!</button>
       <div id="more-info">
@@ -356,34 +358,24 @@
         <p>Mən səni sevirəm</p>
         <p>Би чамд хайртай</p>
         <p>ខ្ញុំស្រលាញ់អ្នក</p>
-        <p>ຂ້ອຍ​ຮັກ​ເຈົ້າ</p>
-        <p>ငါနင့်ကိုချစ်တယ်</p>
-        <p>Mahal kita</p>
-        <p>Ouh je t'aime</p>
-        <p>Eu te amo</p>
-        <p>Amo-te</p>
-        <p>Je t’aime</p>
-        <p>Mi amas vin</p>
-        <p>Ich liab Di</p>
-        <p>Εγώ σ’ αγαπώ</p>
-        <p>Jeg elsker dig</p>
-        <p>Ti amo</p>
-        <p>Ich liebe dich</p>
-        <p>Ti amo</p>
-        <p>我爱你</p>
-        <p>Ik hou van jou</p>
-        <p>Je t’aime</p>
-        <p>Eu te amo</p>
-        <p>ฉันรักคุณ</p>
-        <p>사랑해</p>
-        <p>Μα σε αγαπώ</p>
         <p>ຂໍໂທດ</p>
         <p>Saang khon chao</p>
         <p>Ne te je t’aime</p>
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script>
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+
+    function toggleMoreInfo() {
+      const moreInfo = document.getElementById('more-info');
+      const isVisible = moreInfo.style.display === 'block';
+      moreInfo.style.display = isVisible ? 'none' : 'block';
+      moreInfo.style.maxHeight = isVisible ? '0' : '300px';
+    }
+  </script>
 </body>
 
 </html>
